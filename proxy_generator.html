@@ -8,7 +8,7 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 20px;
+            padding: 50px;
             background-color: #f4f4f4;
         }
 
@@ -20,29 +20,84 @@
             color: #666;
         }
 
-        a {
-            padding: 10px 20px;
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
             background-color: #007bff;
             color: white;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        a:hover {
+        button:hover {
             background-color: #0056b3;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+            display: none;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
 <h1>Proxy Generator</h1>
-<p>Use the Proxy Generator to create unlimited proxies to protect your online identity and maintain privacy while browsing the web. It's fast, easy, and anonymous.</p>
+<p>Click the button below to generate a random proxy link. These proxies can be used to protect your online identity and browse anonymously.</p>
 
-<!-- Link to the Proxy Generator tool -->
-<a href="https://sites.google.com/view/pxlarized-web/links" target="_blank">Generate Proxies Now</a>
+<!-- Button to generate random proxy link -->
+<button onclick="generateRandomLink()">Generate Random Proxy</button>
 
-<!-- Link to go back to the main page -->
+<!-- The randomly generated link will appear here -->
+<a id="random-link" href="#" target="_blank">Click here to visit the random proxy</a>
+
+<!-- Go back link to main page -->
 <a href="index.html" style="margin-top: 20px; display: inline-block;">Back to Apps</a>
+
+<script>
+    function generateRandomLink() {
+        // List of proxy URLs
+        const links = [
+            "https://pxlnova-b8z.pages.dev",
+            "https://pxlnova11.pages.dev",
+            "https://pxlnova4-emp.pages.dev",
+            "https://pxlnovaea2.pages.dev",
+            "https://canvas-90c.pages.dev",
+            "https://i-know-were-you-live.pages.dev",
+            "https://clever1.pages.dev",
+            "https://pxlnovae.pages.dev",
+            "https://skibdi.pages.dev",
+            "https://pxlnova3.pages.dev/",
+            "https://pxlnova4.pages.dev/",
+            "https://pxlnova2.pages.dev/",
+            "https://pxlnova-keb.pages.dev/"
+        ];
+
+        // Get a random index from the links array
+        const randomLink = links[Math.floor(Math.random() * links.length)];
+
+        // Update the link and display it
+        const linkElement = document.getElementById("random-link");
+        linkElement.href = randomLink;
+        linkElement.style.display = "block";
+        linkElement.textContent = `Click here to visit: ${randomLink}`;
+    }
+</script>
+
+<footer>
+    <p>&copy; 2024 Pxlnova. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
